@@ -1,28 +1,32 @@
 .nav-bar {
   background-color: white;
   border-bottom: 4px solid grey;
+  display: flex;
+  align-items: center;
 }
 
 .surreal-logo {
   height: 70px;
   width: 200px;
+  display: inline-block;
+  padding: 5px;
 }
 
 .navbar-links {
-  margin: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
   font-size: 20px;
-  background-color: purple;
-  height: 30px;
-  display: flex;
-  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links-item {
-  margin: auto;
   padding: 5px 15px;
   display: inline-block;
-  color: #fff;
+  color: black;
   height: 30px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+.navbar-links-item:hover {
+  opacity: 0.7;
 }
