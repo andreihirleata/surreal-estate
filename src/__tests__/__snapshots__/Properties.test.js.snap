@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders properties component 1`] = `
+<DocumentFragment>
+  <div>
+    <p>
+      Properties Page
+    </p>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders app 1`] = `
+<DocumentFragment>
+  <div
+    class="nav-bar"
+  >
+    <img
+      alt="logo"
+      class="surreal-logo"
+      src="https://mcrcodes.s3.eu-west-2.amazonaws.com/course/surreal-estate/logo.png"
+    />
+    <ul
+      class="navbar-links"
+    >
+      <a
+        href="/"
+      >
+        <li
+          class="navbar-links-item"
+        >
+          View Properties
+        </li>
+      </a>
+      <a
+        href="/add-property"
+      >
+        <li
+          class="navbar-links-item"
+        >
+          Add a Property
+        </li>
+      </a>
+    </ul>
+  </div>
+  <div>
+    <p>
+      Properties Page
+    </p>
+  </div>
+</DocumentFragment>
+`;
