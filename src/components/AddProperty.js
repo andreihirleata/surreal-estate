@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
+import Alert from "./Alert";
 import axios from "axios";
 
 const AddProperty = () => {
@@ -13,12 +14,18 @@ const AddProperty = () => {
       email: "",
       type: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
+    setAlert({ message: "", isSuccess: false });
     axios
       .post(`http://localhost:4000/api/v1/PropertyListing/`, {
         title: fields.title,
@@ -29,10 +36,18 @@ const AddProperty = () => {
         email: fields.email,
         type: fields.type,
       })
-      .then((res) => {
-        console.log(res);
+      .then(() => {
+        setAlert({
+          message: "Property Added",
+          isSuccess: true,
+        });
       })
-      .catch((err) => console.log(err));
+      .catch(() =>
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        })
+      );
   };
 
   const handleFieldChange = (event) => {
@@ -48,7 +63,6 @@ const AddProperty = () => {
       <div className="add-property" data-testid="add-property">
         <form onSubmit={(e) => handleAddProperty(e)}>
           <div className="form-entry">
-            {" "}
             <label htmlFor="title">Title:</label>
             <input
               id="title"
@@ -127,6 +141,9 @@ const AddProperty = () => {
           <div className="form-entry">
             <button type="submit">Add</button>
           </div>
+          {alert.message && (
+            <Alert message={alert.message} success={alert.isSuccess} />
+          )}
         </form>
       </div>
     </div>

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert it does not render an error or success message if message is empty 1`] = `
+<DocumentFragment>
+  <div
+    class="Alert alert-error"
+  />
+</DocumentFragment>
+`;
+
+exports[`Alert it renders error message 1`] = `
+<DocumentFragment>
+  <div
+    class="Alert alert-error"
+  >
+    error
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert it renders success message 1`] = `
+<DocumentFragment>
+  <div
+    class="Alert alert-error"
+  >
+    success
+  </div>
+</DocumentFragment>
+`;
