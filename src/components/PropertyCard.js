@@ -1,9 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faEnvelope,
+  faBed,
+  faBath,
+} from "@fortawesome/free-solid-svg-icons";
+
+import "../styles/PropertyCard.css";
 
 const PropertyCard = ({
-  id,
   title,
   type,
   bathrooms,
@@ -14,16 +20,35 @@ const PropertyCard = ({
 }) => {
   return (
     <div className="property-card">
-      <div className="icon">
-        <FontAwesomeIcon className="homeIcon" icon={faHome} />
+      <div>
+        <div className="icon">
+          <FontAwesomeIcon
+            className="homeIcon"
+            icon={faHome}
+            style={{ width: "100%", height: "90px", color: "#14213d" }}
+          />
+        </div>
+        <div className="cardTitle">{title}</div>
+        <div className="cardType">
+          Type: <span className="property-value">{type}</span>
+        </div>
+        <div className="cardBedrooms">
+          <FontAwesomeIcon className="bedIcon" icon={faBed} />{" "}
+          <span className="property-value">{bedrooms}</span>
+        </div>
+        <div className="cardBathrooms">
+          <FontAwesomeIcon className="bathIcon" icon={faBath} />{" "}
+          <span className="property-value">{bathrooms}</span>
+        </div>
+        <div className="cardPrice">{price}£</div>
+        <div className="cardCity">{city}</div>
       </div>
-      <div className="cardTitle">{title}</div>
-      <div className="cardType">{type}</div>
-      <div className="cardBathrooms">{bathrooms}</div>
-      <div className="cardBedrooms">{bedrooms}</div>
-      <div className="cardPrice">{price}</div>
-      <div className="cardCity">{city}</div>
-      <div className="cardEmail">{email}</div>
+      <div className="cardEmail">
+        <p>
+          <FontAwesomeIcon className="mailIcon" icon={faEnvelope} />
+          <a href={`mailto:${email}`}>Email</a>
+        </p>
+      </div>
     </div>
   );
 };

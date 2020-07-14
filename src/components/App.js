@@ -8,11 +8,14 @@ import "../styles/App.css";
 const App = () => {
   return (
     <BrowserRouter>
-      <NavBar></NavBar>
-      <Switch>
-        <Route exact path="/" component={Properties}></Route>
-        <Route exact path="/add-property" component={AddProperty}></Route>
-      </Switch>
+      <div className="conatiner">
+        <NavBar></NavBar>
+
+        <Switch>
+          <Route exact path="/" component={Properties}></Route>
+          <Route exact path="/add-property" component={AddProperty}></Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 };
