@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import qs from "qs";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import "../styles/Sidebar.css";
 
 const Sidebar = () => {
+  const [query, setQuery] = useState("");
+
+  const history = useHistory();
   const { search } = useLocation();
   const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
@@ -17,6 +20,19 @@ const Sidebar = () => {
       encode: false,
     });
   };
+
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const newQueryString = buildQueryString("query", {
+      title: { $regex: query },
+    });
+    history.push(newQueryString);
+  };
+
   return (
     <div className="sidebar">
       <div className="city-filter-wrapper">
@@ -44,6 +60,22 @@ const Sidebar = () => {
             <li className="descending-filter">Descending</li>
           </Link>
         </ul>
+      </div>
+      <div className="form-wrapper">
+        <form
+          onChange={(e) => handleInputChange(e)}
+          onSubmit={(e) => handleSearch(e)}
+        >
+          <label htmlFor="query">Search: </label>
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button type="submit" value="submit">
+            Search
+          </button>
+        </form>
       </div>
     </div>
   );
