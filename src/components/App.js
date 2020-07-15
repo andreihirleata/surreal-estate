@@ -26,7 +26,11 @@ const App = () => {
         ></NavBar>
 
         <Switch>
-          <Route exact path="/" component={Properties}></Route>
+          <Route
+            exact
+            path="/"
+            render={(props) => <Properties {...props} userId={userId} />}
+          ></Route>
           <Route exact path="/add-property" component={AddProperty}></Route>
         </Switch>
       </div>

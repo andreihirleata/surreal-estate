@@ -5,7 +5,7 @@ import axios from "axios";
 import "../styles/Properties.css";
 import Sidebar from "./Sidebar";
 
-const Properties = () => {
+const Properties = ({ userId }) => {
   const [properties, setProperties] = useState([]);
   const { search } = useLocation();
   useEffect(() => {
@@ -15,7 +15,14 @@ const Properties = () => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, [search]);
+
+  const handleSaveProperty = (propertyId) => {
+    axios.post("http://localhost:4000/api/v1/Favourite", {
+      propertyListing: propertyId,
+      fbUserId: userId,
+    });
+  };
 
   return (
     <div className="properties">
@@ -23,7 +30,11 @@ const Properties = () => {
       <ul className="property-grid">
         {properties.map((property) => (
           <li className="property-card" key={property._id}>
-            <PropertyCard {...property} />
+            <PropertyCard
+              {...property}
+              userId={userId}
+              onSaveProperty={handleSaveProperty}
+            />
           </li>
         ))}
       </ul>

@@ -4,20 +4,16 @@
   background-color: #000000;
   border-bottom: 1px solid grey;
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 0;
   font-family: "Maven Pro", sans-serif;
   justify-content: space-between;
   padding: 1rem;
 }
-
-.surreal-logo {
-  height: 70px;
-  width: 200px;
-  display: inline-block;
-  padding: 5px;
+.fort-awesome-icon {
+  margin-bottom: 2rem;
 }
-
 .navbar-links {
   font-size: 16px;
   margin: 0;
@@ -47,4 +43,13 @@
   letter-spacing: 0.005em;
   background-color: #4267b2;
   cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .nav-bar {
+    flex-direction: row;
+  }
+  .fort-awesome-icon {
+    margin-bottom: 0;
+  }
 }

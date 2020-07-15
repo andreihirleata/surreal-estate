@@ -10,8 +10,8 @@ const NavBar = ({ onLogin, userId, onLogout }) => {
   return (
     <div className="nav-bar">
       <Link to="/">
-        {" "}
         <FontAwesomeIcon
+          className="fort-awesome-icon"
           icon={faFortAwesomeAlt}
           style={{ fontSize: "35px", color: "white" }}
         />
@@ -42,7 +42,7 @@ const NavBar = ({ onLogin, userId, onLogout }) => {
                   className="navbar-links-item2"
                   onClick={renderProps.onClick}
                 >
-                  Sign In With Facebook
+                  Sign In
                 </li>
               )}
             />
