@@ -37,3 +37,14 @@
 .navbar-links-item:hover {
   opacity: 0.7;
 }
+
+.navbar-links-item2 {
+  padding: 5px 15px;
+  display: inline-block;
+  color: #fff;
+  height: 30px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  background-color: #4267b2;
+  cursor: pointer;
+}

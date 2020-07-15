@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import qs from "qs";
 import { Link, useLocation, useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Sidebar.css";
 
 const Sidebar = () => {
   const [query, setQuery] = useState("");
-
   const history = useHistory();
   const { search } = useLocation();
+
   const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
 
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || "{}"),
+        ...valueObj,
+      }),
     };
+
     return qs.stringify(newQueryParams, {
       addQueryPrefix: true,
       encode: false,
@@ -37,6 +43,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="city-filter-wrapper">
         <ul className="city-filter">
+          <li className="city-selector">City: </li>
           <Link to={buildQueryString("query", { city: "Manchester" })}>
             <li className="sidebar-item">Manchester</li>{" "}
           </Link>
@@ -53,27 +60,34 @@ const Sidebar = () => {
       </div>
       <div className="price-filter-wrapper">
         <ul className="price-filter">
+          <li className="price-selector">Price: </li>
           <Link to={buildQueryString("sort", { price: 1 })}>
-            <li className="ascending-filter">Ascending</li>
+            <li className="sidebar-item">Ascending</li>
           </Link>
           <Link to={buildQueryString("sort", { price: -1 })}>
-            <li className="descending-filter">Descending</li>
+            <li className="sidebar-item">Descending</li>
           </Link>
         </ul>
       </div>
       <div className="form-wrapper">
         <form
+          className="search-form"
           onChange={(e) => handleInputChange(e)}
           onSubmit={(e) => handleSearch(e)}
         >
-          <label htmlFor="query">Search: </label>
           <input
+            className="search-input"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button type="submit" value="submit">
+          <button type="submit" value="submit" className="search-btn">
             Search
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="search-icon"
+              style={{ marginLeft: "4px" }}
+            />
           </button>
         </form>
       </div>

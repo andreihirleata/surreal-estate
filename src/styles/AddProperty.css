@@ -28,7 +28,7 @@ label {
   margin: auto;
 }
 
-button {
+.add-submit-btn {
   margin: auto;
   width: 70%;
   height: 30px;
@@ -38,14 +38,15 @@ button {
   font-weight: 700;
   box-shadow: none;
   background-color: #fca311;
-  color: white;
+  color: #000000;
   transition: background 250ms ease-in-out, transform 150ms ease;
 }
+
 button:active {
   transform: scale(0.99);
 }
 
-input {
+.form-input {
   margin: auto;
   width: 70%;
   height: 30px;

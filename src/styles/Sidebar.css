@@ -6,10 +6,49 @@
   background-color: white;
   padding-top: 20px;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
+}
+
+.sidebar-item {
+  margin-right: 1.3rem;
+}
+
+.city-selector,
+.price-selector {
+  margin-right: 1.3rem;
+  font-weight: 700;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-icon {
+  color: #000000;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+}
+.search-btn {
+  background-color: #fca311;
+  text-decoration: none;
+  border: none;
+  border-radius: 9px;
+  width: 100px;
+  font-weight: 700;
+}
+
+.search-input {
+  display: block;
+  margin-right: 10px;
+  width: 300px;
 }

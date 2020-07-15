@@ -65,6 +65,7 @@ const AddProperty = () => {
           <div className="form-entry">
             <label htmlFor="title">Title:</label>
             <input
+              className="form-input"
               id="title"
               name="title"
               value={fields.title}
@@ -91,6 +92,7 @@ const AddProperty = () => {
           <div className="form-entry">
             <label htmlFor="bedrooms">Bedrooms:</label>
             <input
+              className="form-input"
               id="bedrooms"
               name="bedrooms"
               value={fields.bedrooms}
@@ -100,6 +102,7 @@ const AddProperty = () => {
           <div className="form-entry">
             <label htmlFor="bathrooms">Bathrooms:</label>
             <input
+              className="form-input"
               id="bathrooms"
               name="bathrooms"
               value={fields.bathrooms}
@@ -109,6 +112,7 @@ const AddProperty = () => {
           <div className="form-entry">
             <label htmlFor="price">Price:</label>
             <input
+              className="form-input"
               id="price"
               name="price"
               value={fields.price}
@@ -132,6 +136,7 @@ const AddProperty = () => {
           <div className="form-entry">
             <label htmlFor="email">Email:</label>
             <input
+              className="form-input"
               id="email"
               name="email"
               value={fields.email}
@@ -139,7 +144,9 @@ const AddProperty = () => {
             ></input>
           </div>
           <div className="form-entry">
-            <button type="submit">Add</button>
+            <button type="submit" className="add-submit-btn">
+              Add
+            </button>
           </div>
           {alert.message && (
             <Alert message={alert.message} success={alert.isSuccess} />

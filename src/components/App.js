@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
@@ -6,10 +6,24 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "../styles/App.css";
 
 const App = () => {
+  const [userId, setUserId] = useState("");
+
+  const handleLogin = (response) => {
+    setUserId(response.id);
+  };
+
+  const handleLogout = () => {
+    window.FB.logout(() => setUserId(""));
+  };
+
   return (
     <BrowserRouter>
       <div className="conatiner">
-        <NavBar></NavBar>
+        <NavBar
+          onLogin={handleLogin}
+          userId={userId}
+          onLogout={handleLogout}
+        ></NavBar>
 
         <Switch>
           <Route exact path="/" component={Properties}></Route>
