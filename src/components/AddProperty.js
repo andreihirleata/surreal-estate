@@ -12,7 +12,7 @@ const AddProperty = () => {
       bathrooms: "",
       price: "",
       email: "",
-      type: "",
+      type: "Flat",
     },
     alert: {
       message: "",
