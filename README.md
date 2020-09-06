@@ -16,7 +16,7 @@ Live version of the project `https://nifty-wilson-2b456c.netlify.app/`
 *Jest
 *OAuth
 
-## Dependencies
+## *Dependencies
 *Axios
 *react-facebook-login
 *font-awesome
