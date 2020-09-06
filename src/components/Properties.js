@@ -10,7 +10,9 @@ const Properties = ({ userId }) => {
   const { search } = useLocation();
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .get(
+        `https://glacial-mesa-67123.herokuapp.com/api/v1/PropertyListing${search}`
+      )
       .then((res) => setProperties(res.data))
       .catch((err) => {
         console.log(err);
@@ -18,7 +20,7 @@ const Properties = ({ userId }) => {
   }, [search]);
 
   const handleSaveProperty = (propertyId) => {
-    axios.post("http://localhost:4000/api/v1/Favourite", {
+    axios.post("https://glacial-mesa-67123.herokuapp.com/api/v1/Favourite", {
       propertyListing: propertyId,
       fbUserId: userId,
     });

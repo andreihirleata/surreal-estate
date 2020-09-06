@@ -37,6 +37,7 @@ const Sidebar = () => {
       title: { $regex: query },
     });
     history.push(newQueryString);
+    console.log(history);
   };
 
   return (
@@ -44,6 +45,9 @@ const Sidebar = () => {
       <div className="city-filter-wrapper">
         <ul className="city-filter">
           <li className="city-selector">City: </li>
+          <Link to="/">
+            <li className="sidebar-item">All</li>
+          </Link>
           <Link to={buildQueryString("query", { city: "Manchester" })}>
             <li className="sidebar-item">Manchester</li>{" "}
           </Link>

@@ -27,15 +27,18 @@ const AddProperty = () => {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
     axios
-      .post(`http://localhost:4000/api/v1/PropertyListing/`, {
-        title: fields.title,
-        city: fields.city,
-        bedrooms: fields.bedrooms,
-        bathrooms: fields.bathrooms,
-        price: fields.price,
-        email: fields.email,
-        type: fields.type,
-      })
+      .post(
+        `https://glacial-mesa-67123.herokuapp.com/api/v1/PropertyListing/`,
+        {
+          title: fields.title,
+          city: fields.city,
+          bedrooms: fields.bedrooms,
+          bathrooms: fields.bathrooms,
+          price: fields.price,
+          email: fields.email,
+          type: fields.type,
+        }
+      )
       .then(() => {
         setAlert({
           message: "Property Added",
