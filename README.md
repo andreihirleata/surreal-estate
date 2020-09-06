@@ -16,10 +16,10 @@ Live version of the project `https://nifty-wilson-2b456c.netlify.app/`
 *Jest
 *OAuth
 
-## *Dependencies
-*Axios
-*react-facebook-login
-*font-awesome
+## Dependencies
+-Axios
+-react-facebook-login
+-font-awesome
 
 ## Running the project locally
 To clone the repo run `git clone git@github.com:andreihirleata/surreal-estate.git`  
