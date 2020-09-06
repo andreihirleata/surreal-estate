@@ -6,7 +6,8 @@ Fictional Real Estate App
 Uses Manchester Codes API from https://github.com/MCRcodes/surreal-estate-api
 
 ## Deployment
-Live version of the project   https://nifty-wilson-2b456c.netlify.app/
+Live version of the project  
+https://nifty-wilson-2b456c.netlify.app/
 
 ## Technologies Used
 *  React
