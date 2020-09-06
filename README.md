@@ -9,17 +9,17 @@ Uses Manchester Codes API from https://github.com/MCRcodes/surreal-estate-api
 Live version of the project `https://nifty-wilson-2b456c.netlify.app/`
 
 ## Technologies Used
-*React
-*Mongoose
-*Heroku (API Deployment)
-*Netlify (Client Deployment)
-*Jest
-*OAuth
+*  React
+*  Mongoose
+*  Heroku (API Deployment)
+*  Netlify (Client Deployment)
+*  Jest
+*  OAuth
 
 ## Dependencies
--Axios
--react-facebook-login
--font-awesome
+*  Axios
+*  react-facebook-login
+*  font-awesome
 
 ## Running the project locally
 To clone the repo run `git clone git@github.com:andreihirleata/surreal-estate.git`  
