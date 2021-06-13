@@ -40,7 +40,7 @@ const Properties = ({ userId }) => {
           </li>
         ))}
       </ul>)
-      : (<p style={{fontSize : "32px", textAlign: "center"}}>Loading...</p>)
+      : (<p className="property-grid" style={{fontSize : "32px", textAlign: "center"}}>Loading...</p>)
         }
     </div>
   );
