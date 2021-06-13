@@ -6,7 +6,7 @@ import "../styles/Properties.css";
 import Sidebar from "./Sidebar";
 
 const Properties = ({ userId }) => {
-  const [properties, setProperties] = useState([]);
+  const [properties, setProperties] = useState(false);
   const { search } = useLocation();
   useEffect(() => {
     axios
@@ -29,8 +29,8 @@ const Properties = ({ userId }) => {
   return (
     <div className="properties">
       <Sidebar className="sidebar-wrapper" />
-      <ul className="property-grid">
-        {properties.map((property) => (
+     {(properties) ? ( <ul className="property-grid">
+        {  properties.map((property) => (
           <li className="property-card" key={property._id}>
             <PropertyCard
               {...property}
@@ -39,7 +39,9 @@ const Properties = ({ userId }) => {
             />
           </li>
         ))}
-      </ul>
+      </ul>)
+      : (<p style={{fontSize : "32px", textAlign: "center"}}>Loading...</p>)
+        }
     </div>
   );
 };
